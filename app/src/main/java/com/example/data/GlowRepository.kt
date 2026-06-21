@@ -69,92 +69,82 @@ class GlowRepository(private val glowDao: GlowDao) {
         val isShampooDay = dayOfWeek in listOf("Monday", "Wednesday", "Saturday")
         val isOilDay = dayOfWeek in listOf("Tuesday", "Thursday", "Sunday")
 
-        // 1. [04:00 AM] WAKE UP — CIRCADIAN RESET
+        // 1. [04:00 AM] WAKE UP
         tasks.add(TaskItemEntity(
             dayNumber = dayNumber, dateString = dateStr, timeOfDay = "MORNING",
-            title = "[04:00 AM] Wake Up — Scale Tracking & Sun", product = "Weight tracking + 10 min outdoor sunlight",
-            purpose = "Immediately stand up, weigh yourself, and step into natural sunlight for 10 mins to set your circadian cortisol rhythm.", category = "BODY", glowPoints = 10
+            title = "[04:00 AM] Wake Up — Circadian Reset", product = "Weight alignment & Natural sunlight / Bright light",
+            purpose = "Immediately stand up, weigh yourself, and get 10 mins natural sunlight to set circadian rhythm for the entire day.", category = "BODY", glowPoints = 10
         ))
 
         // 2. [04:10 AM] MORNING DRINKS
         tasks.add(TaskItemEntity(
             dayNumber = dayNumber, dateString = dateStr, timeOfDay = "MORNING",
-            title = "[04:10 AM] Morning Drinks: Anti-Inflammation Catalyst", product = "Turmeric + Ginger + Black pepper (Wait 15m) -> 1 Shot Amla Juice",
-            purpose = "Flushes morning digestive toxins, reduces skin swelling, and supplies deep Vitamin C to block skin pigmentation.", category = "DIET", glowPoints = 15
+            title = "[04:10 AM] Morning Drinks: Anti-Inflammation Elixir", product = "Warm water + Turmeric + Ginger + Black pepper (Wait 15m) -> Amla juice shot",
+            purpose = "Immediately flushes digestive toxins, reduces skin swelling. Vitamin C targets excess melanin.", category = "DIET", glowPoints = 15
         ))
 
         // 3. [04:25 AM] MORNING SKINCARE
         tasks.add(TaskItemEntity(
             dayNumber = dayNumber, dateString = dateStr, timeOfDay = "MORNING",
-            title = "[04:25 AM] Morning Skincare: Shield & Hydration Active", product = "CeraVe Cleanser -> Niacinamide 10% + Zinc 1% -> Neutrogena Hydro Boost -> SPF 50",
-            purpose = "Clearing morning sebum, shrinking pores, deep hydration, and establishing massive active UV defense.", category = "SKIN", glowPoints = 20
+            title = "[04:25 AM] Morning Skincare: Cleanser & Barrier Build", product = "CeraVe cleanser + The Ordinary Niacinamide 10% + Zinc + Neutrogena Hydro Boost + SPF 50",
+            purpose = "Clears sebum, controls oil, reduces redness and provides active UV barrier protection (SPF 50 is non-negotiable!).", category = "SKIN", glowPoints = 20
         ))
 
         // 4. [04:40 AM] HAIR PROTOCOL
         val hairProtProduct = if (isShampooDay) {
-            "Minoxidil 5% + Nizoral Shampoo + OGX Biotin Conditioner + 2 min scalp massage"
+            "Minoxidil 5% on scalp + Nizoral Anti-Dandruff Shampoo + OGX Biotin Conditioner + 2 mins Silicone massager"
         } else if (isOilDay) {
-            "Minoxidil 5% + Castor/Rosemary/Coconut Oil Mix + 2 min scalp massage"
+            "Minoxidil 5% on scalp + Castor Oil + Rosemary + Coconut Oil Mix + 2 mins Silicone massager"
         } else {
-            "Minoxidil 5% + 2 min scalp massage (temples & crown)"
+            "Minoxidil 5% on scalp + 2 mins Silicone scalp massager"
         }
         val hairProtPurpose = if (isShampooDay) {
-            "Combats dandruff, washes off DHT scale buildup, reconstructs hair matrix (Shampoo Monday/Wednesday/Saturday)"
+            "Combats dandruff, clears DHT crust, reconstructs follicles with silicone massager (Shampoo Monday/Wednesday/Saturday)"
         } else if (isOilDay) {
-            "Delivers deep root nourishing and scalp stimulation to temple/crown structures (Oiling Tuesday/Thursday/Sunday)"
+            "Deep root oiling & scalp stimulation on temples & crown on non-shampoo days."
         } else {
-            "Restores temple/crown capillary blood flow on active hair rest day (Friday)"
+            "Stimulates temple circulation on hair rest day."
         }
         tasks.add(TaskItemEntity(
             dayNumber = dayNumber, dateString = dateStr, timeOfDay = "MORNING",
-            title = "[04:40 AM] Hair Care & Scalp Massage", product = hairProtProduct,
+            title = "[04:40 AM] Morning Hair Care & Massager Protocol", product = hairProtProduct,
             purpose = hairProtPurpose, category = "HAIR", glowPoints = 15
         ))
 
-        // 5. [05:00 AM] MIND & BREATH RESET
+        // 5. [05:00 AM] MEDITATION
         tasks.add(TaskItemEntity(
             dayNumber = dayNumber, dateString = dateStr, timeOfDay = "MORNING",
-            title = "[05:00 AM] Mind & Breath Reset", product = "10 min deep breathing + visualization + 3 daily intentions",
-            purpose = "Lowers morning cortisol, centers focus, and mentally logs target milestones BEFORE accessing sensory notifications.", category = "BODY", glowPoints = 10
+            title = "[05:00 AM] Morning Meditation & Daily Intention", product = "Mindfulness Breathing & Future Visualization",
+            purpose = "Before checking phone: 5 deep slow breaths, imagine future self, and set 3 intentions for the day (10 mins total).", category = "BODY", glowPoints = 10
         ))
 
         // 6. [05:15 AM] MORNING SUPPLEMENTS
         tasks.add(TaskItemEntity(
             dayNumber = dayNumber, dateString = dateStr, timeOfDay = "MORNING",
-            title = "[05:15 AM] Morning Supplements (With breakfast)", product = "Creatine 5g, Fish Oil, Vitamin D3 2000 IU, Biotin 5000mcg, Zinc 30mg, Collagen Peptides 10g",
-            purpose = "Supplements vital cell blocks to trigger high-grade hair matrix density and facial collagen integrity.", category = "SUPPLEMENTS", glowPoints = 15
+            title = "[05:15 AM] Morning Supplements (Take with breakfast)", product = "Creatine 5g, Fish Oil Omega 3, Vitamin D 2000 IU, Biotin 5000mcg, Zinc 30mg, Collagen 10g",
+            purpose = "Supplements system nutrients to catalyze hair matrix activity & dermal collagen rebuild.", category = "SUPPLEMENTS", glowPoints = 15
         ))
 
         // 7. [05:30 AM] BREAKFAST
         tasks.add(TaskItemEntity(
             dayNumber = dayNumber, dateString = dateStr, timeOfDay = "MORNING",
-            title = "[05:30 AM] Breakfast: Fuel & Protein Loading", product = "4 eggs + 100g oats + 1 banana + 250ml milk",
-            purpose = "Delivers 35g+ high-bioavailability protein to fuel muscle protein synthesis and active keratin production.", category = "DIET", glowPoints = 15
+            title = "[05:30 AM] Breakfast: Protein Loading", product = "4 whole eggs + 100g oats + 1 banana + 250ml milk",
+            purpose = "Provides 35g+ bioavailable protein to feed muscle protein synthesis and hair keratin structure.", category = "DIET", glowPoints = 15
         ))
 
         // 8. [06:00 AM] WORKOUT
-        val workoutDetails = when (dayOfWeek) {
-            "Monday" -> Pair("MONDAY — Push A", "Incline Bench (4 sets), DB Shoulder Press (3 sets), Incline DB Press (3 sets), Lateral Raises (4 sets), Cable Fly (3 sets), Tricep Pushdown (3 sets) + 20-30 min Zone 2 Cardio + stretching")
-            "Tuesday" -> Pair("TUESDAY — Pull A", "Pull-Ups/Lat Pulldown (4 sets), Chest Supported Row (3 sets), Single Arm Lat Pulldown (3 sets), Face Pulls (4 sets), DB Curl (3 sets), Hammer Curl (3 sets)")
-            "Wednesday" -> Pair("WEDNESDAY — Legs A", "Barbell Squats (4 sets), RDL (4 sets), Leg Press (3 sets), Leg Curl (3 sets), Standing Calf Raises (4 sets), Hanging Leg Raises (3 sets) + Cardio + stretching")
-            "Thursday" -> Pair("THURSDAY — Push B", "Seated DB Press (4 sets), Incline Machine Press (3 sets), Lateral Raises (5 sets), Rear Delt Fly (4 sets), Tricep Overhead Extension (3 sets), Dips (3 sets)")
-            "Friday" -> Pair("FRIDAY — Pull B", "Barbell Row (4 sets), Lat Pulldown Neutral (3 sets), Seated Cable Row (3 sets), Face Pulls (3 sets), Incline DB Curl (3 sets), Hammer Curl (3 sets) + Cardio + stretching")
-            "Saturday" -> Pair("SATURDAY — Legs B", "Bulgarian Split Squats (3 sets), RDL (3 sets), Leg Extension (3 sets), Leg Curl (3 sets), Calf Raises (4 sets), Neck Curls (3 sets), Neck Extensions (3 sets), Side Neck Raises (3 sets)")
-            else -> Pair("SUNDAY — Recovery & Mobility", "Active rest. Walking, stretching, mobility routines, weight tracking, and clean high-protein nutrition.")
-        }
-        val isRestDay = dayOfWeek == "Sunday"
+        val zone2 = if (dayOfWeek in listOf("Monday", "Wednesday", "Friday")) " + Zone 2 Cardio (20-30 min jog/cycle)" else ""
         tasks.add(TaskItemEntity(
             dayNumber = dayNumber, dateString = dateStr, timeOfDay = "MORNING",
-            title = "[06:00 AM] Gym Session: ${workoutDetails.first}", product = workoutDetails.second,
-            purpose = if (isRestDay) "Allows myofibrillar recovery and total muscle density repair." else "Ensure progressive overload by logging weights and reps. Complete the 10 min stretch post-workout.",
-            category = "BODY", glowPoints = if (isRestDay) 15 else 25
+            title = "[06:00 AM] High Intensity Training (Workout / Cardio)", product = "PPL Split (6 days / week)$zone2 + 10 mins Stretch after",
+            purpose = "75-90 mins maximum. Progressive overload every session. Stretch 10 mins after every session.", category = "BODY", glowPoints = 25
         ))
 
-        // 9. [08:00 AM] POST WORKOUT SKINCARE REAPPLY
+        // 9. [08:00 AM] POST WORKOUT
         tasks.add(TaskItemEntity(
             dayNumber = dayNumber, dateString = dateStr, timeOfDay = "MORNING",
-            title = "[08:00 AM] Post Workout Skincare & Refresh", product = "Shower + Vitamin C serum + Neutrogena Hydro Boost + SPF 50",
-            purpose = "Protects dermal layers from daily oxidation stresses using Vitamin C, locks hydration, and secures outdoor active UV shielding.", category = "SKIN", glowPoints = 20
+            title = "[08:00 AM] Post Workout Recovery & Skincare Reapply", product = "Shower + Vitamin C serum + Neutrogena Hydro Boost + Reapply SPF 50 + Post meal (protein/carbs)",
+            purpose = "Defends skin barrier with Vitamin C, locks hydration. Reapply SPF 50.", category = "SKIN", glowPoints = 20
         ))
 
         // 10. [08:30 AM] DEEP WORK
@@ -167,110 +157,100 @@ class GlowRepository(private val glowDao: GlowDao) {
         // 11. [12:30 PM] LUNCH
         tasks.add(TaskItemEntity(
             dayNumber = dayNumber, dateString = dateStr, timeOfDay = "ANYTIME",
-            title = "[12:30 PM] Lunch: Peak Nutritional Absorption", product = "Rice + Chicken/Paneer + Dal + Cruciferous vegetables + Olive Oil + Yogurt/Curd",
-            purpose = "Target 35-40g protein. Largest macronutrient intake; supports gut microbiota biome and sustained growth.", category = "DIET", glowPoints = 15
+            title = "[12:30 PM] Lunch: Peak Nutritional Absorption", product = "Rice + Chicken/Paneer + Dal + Vegetables + Extra Virgin Olive Oil + Yogurt/Curd",
+            purpose = "Target 35-40g protein. Biggest meal of the day; supports gut health and sustained energy.", category = "DIET", glowPoints = 15
         ))
 
         // 12. [02:00 PM] SUNLIGHT WALK
         tasks.add(TaskItemEntity(
             dayNumber = dayNumber, dateString = dateStr, timeOfDay = "ANYTIME",
-            title = "[02:00 PM] Post-Lunch Sunlight Walk", product = "10-15 mins walking outdoors (keep SPF 50 shields active)",
-            purpose = "Accelerates lymphatic digestion, balances blood glucose curves, and supplies natural active endocrine support.", category = "BODY", glowPoints = 10
+            title = "[02:00 PM] Post-Lunch Sunlight Walk", product = "10-15 mins walking outdoors (keep SPF 50 on)",
+            purpose = "Boosts digestion, regulates blood glucose, produces natural Vitamin D, and serves as a mental reset.", category = "BODY", glowPoints = 10
         ))
 
-        // 13. [04:00 PM] MID AFTERNOON JUICE
+        // 13. [04:00 PM] MID AFTERNOON ELIXIR
         val juiceRotating = when (dayOfWeek) {
-            "Monday", "Wednesday", "Friday", "Saturday" -> Pair("Carrot + Beetroot Juice", "Carrot & Beetroot cold-pressed mix: elevates vascular circulation and triggers skin brightening.")
-            "Tuesday", "Thursday" -> Pair("Lemon + Ginger Water", "Lemon & Ginger infused water: clears digestion pathways and stimulates active organic oxidation.")
-            else -> Pair("Cucumber + Mint + Lemon + Green Apple + Ginger Juice", "Green Elixir: deep systemic blood purifier and high-density mineral skin food.")
+            "Monday", "Wednesday", "Friday", "Saturday" -> Pair("Carrot + Beetroot Juice", "Boosts circulation & triggers skin health.")
+            "Tuesday", "Thursday" -> Pair("Lemon + Ginger Water Link", "Clears digestion & boosts active oxidation.")
+            else -> Pair("Green Juice (Cucumber/Mint/Lemon/Apple/Ginger)", "Deep blood purifier and high mineral skin food.")
         }
         tasks.add(TaskItemEntity(
             dayNumber = dayNumber, dateString = dateStr, timeOfDay = "ANYTIME",
-            title = "[04:00 PM] Afternoon Juice: ${juiceRotating.first}", product = "Ingredients: Raw cold pressed extract + raw handful of clean nuts/fruits",
+            title = "[04:00 PM] Mid-Afternoon Elixir: ${juiceRotating.first}", product = "Ingredients: Raw cold-pressed extract + light snack (peanuts / fruits)",
             purpose = juiceRotating.second, category = "DIET", glowPoints = 15
         ))
 
         // 14. [05:00 PM] LAST MEAL
         tasks.add(TaskItemEntity(
             dayNumber = dayNumber, dateString = dateStr, timeOfDay = "ANYTIME",
-            title = "[05:00 PM] dinner: Clean Protein & Fasting Initiation", product = "Light greens + clean protein (Chicken/Paneer/Dal/Fish)",
-            purpose = "Allows 3.5 hours minimum fasting window before deep sleep state block, maximizing GH secretion.", category = "DIET", glowPoints = 15
+            title = "[05:00 PM] Last Meal (Dinner) & Digestion Fasting", product = "Light dinner (Vegetables + Protein) - stop eating after this",
+            purpose = "3-4 hours before sleep minimum. Earlier you stop eating = better sleep quality.", category = "DIET", glowPoints = 15
         ))
 
         // 15. [06:00 PM] WIND DOWN BEGINS
         tasks.add(TaskItemEntity(
             dayNumber = dayNumber, dateString = dateStr, timeOfDay = "ANYTIME",
-            title = "[06:00 PM] Screen Reduction & Light Dimming", product = "Ambient warm lighting + light static stretching",
-            purpose = "Stop screens to restore visual cortex rest, triggering normal, non-suppressed melatonin synthesis.", category = "BODY", glowPoints = 10
+            title = "[06:00 PM] Night Shift Wind Down & Screen Reduction", product = "Warm lighting + Light stretching / gentle walk",
+            purpose = "Stop screens gradually, prepare mind for sleep. Triggers natural melatonin cycle.", category = "BODY", glowPoints = 10
         ))
 
-        // 16. [07:00 PM] NIGHT SKINCARE (Simplified Rotate Program)
+        // 16. [07:00 PM] NIGHT SKINCARE
         val skinActivesText = when (dayOfWeek) {
-            "Monday", "Thursday" -> Pair(
-                "CeraVe Cleanser + Caffeine Eye Cream -> Alpha Arbutin 2% + Neutrogena Hydro Boost",
-                "Mon/Thu Target: Pigmentation control, cheek/forehead tan reduction, secure skin barrier."
-            )
-            "Wednesday", "Saturday" -> Pair(
-                "CeraVe Cleanser + Caffeine Eye Cream -> AHA/BHA Toner + Neutrogena Hydro Boost",
-                "Wed/Sat Target: Gentle exfoliation, clear follicle clogging, and refine skin texture."
-            )
-            else -> Pair(
-                "CeraVe Cleanser + Caffeine Eye Cream -> Neutrogena Hydro Boost + Pure Aloe Vera Gel",
-                "Tue/Fri/Sun Barrier Recovery: Actives-free soothing cycle to rest the skin barrier & avoid irritation."
-            )
+            "Monday", "Sunday" -> "COSRX AHA/BHA Toner + The Ordinary Retinol 0.2% + Neutrogena Hydro Boost + Aloe Vera Gel + Laneige Lip Mask"
+            "Wednesday", "Friday" -> "COSRX AHA/BHA Toner + Neutrogena Hydro Boost + Aloe Vera Gel + Laneige Lip Mask"
+            "Tuesday", "Saturday" -> "The Ordinary Alpha Arbutin 2% (Tan removal) + Neutrogena Hydro Boost + Aloe Vera Gel + Laneige Lip Mask"
+            "Thursday" -> "The Ordinary Alpha Arbutin 2% (Tan removal) + The Ordinary Retinol 0.2% + Neutrogena Hydro Boost + Aloe Vera Gel + Laneige Lip Mask"
+            else -> "COSRX AHA/BHA Toner + Neutrogena Hydro Boost + Aloe Vera Gel + Laneige Lip Mask"
         }
         tasks.add(TaskItemEntity(
             dayNumber = dayNumber, dateString = dateStr, timeOfDay = "NIGHT",
-            title = "[07:00 PM] Night Skincare Routine",
-            product = skinActivesText.first,
-            purpose = skinActivesText.second,
-            category = "SKIN",
-            glowPoints = 20
+            title = "[07:00 PM] Night Skincare Routine", product = "CeraVe Cleanser + $skinActivesText + Caffeine Eye Cream",
+            purpose = "Cleanses day pollution, triggers skin cell turnover, fades forehead/cheek tan, and depuffs eyes.", category = "SKIN", glowPoints = 20
         ))
 
         // 17. [07:20 PM] NIGHT HAIR + OIL
         val nightHairProd = if (isOilDay) {
-            "Minoxidil 5% + Castor/Coconut overnight oil + Finasteride 1mg"
+            "Minoxidil 5% PM Dose + Finasteride 1mg after food + Castor & Coconut Mix Overnight Hair Oil"
         } else {
-            "Minoxidil 5% + Finasteride 1mg"
+            "Minoxidil 5% PM Dose + Finasteride 1mg after food"
         }
         val nightHairPurp = if (isOilDay) {
-            "Suppresses scalp DHT systematically (via Finasteride) and locks deep moisture overnight (Oiling days: Tue/Thu/Sun)."
+            "PM growth trigger + DHT blockage. Overnight oil locks moisture during recovery sleep state."
         } else {
-            "Suppresses cell-destroying DHT systematically while sustaining standard follicle growth stimulation."
+            "PM growth trigger + DHT block. Critical for permanent temple and crown density regrowth."
         }
         tasks.add(TaskItemEntity(
             dayNumber = dayNumber, dateString = dateStr, timeOfDay = "NIGHT",
-            title = "[07:20 PM] Night Scalp & Hair Protocol", product = nightHairProd,
+            title = "[07:20 PM] Night Hair Growth Protocol", product = nightHairProd,
             purpose = nightHairPurp, category = "HAIR", glowPoints = 20
         ))
 
         // 18. [07:30 PM] NIGHT SUPPLEMENTS
         tasks.add(TaskItemEntity(
             dayNumber = dayNumber, dateString = dateStr, timeOfDay = "NIGHT",
-            title = "[07:30 PM] Night Supplements Pack", product = "Vitamin E 15mg, MSM 1000–3000mg, Magnesium Glycinate 300–400mg",
-            purpose = "Promotes deep cellular repair, supports hair matrix, and triggers high-density sleep (Magnesium Glycinate).", category = "SUPPLEMENTS", glowPoints = 15
+            title = "[07:30 PM] Night Supplements Pack", product = "Saw Palmetto, Vitamin E 15mg, MSM 1000-3000mg, Magnesium 300-400mg",
+            purpose = "Reduces overnight DHT levels, enhances cellular recovery, and Magnesium triggers deep slow wave sleep.", category = "SUPPLEMENTS", glowPoints = 15
         ))
 
         // 19. [07:45 PM] NIGHT MEDITATION & READING
         tasks.add(TaskItemEntity(
             dayNumber = dayNumber, dateString = dateStr, timeOfDay = "NIGHT",
-            title = "[07:45 PM] Mind Stillness & Box Breathing", product = "Box breathing x8 + book reading (strictly no phones/blue light)",
-            purpose = "Decreases cardiac rhythm, down-regulates overnight stress hormones for pristine anabolic states.", category = "BODY", glowPoints = 10
+            title = "[07:45 PM] Night Meditation & Box Breathing", product = "Box breathing x8 (4 in, 4 hold, 4 out, 4 hold) + Progressive Muscle Relaxation + Gratitude",
+            purpose = "Lowers cortisol, balances nervous system. Red physical book reading — strictly no phone.", category = "BODY", glowPoints = 10
         ))
 
-        // 20. [08:00 PM] JAWLINE + POSTURE
+        // 20. [08:00 PM] JAWLINE + NECK WORK
         tasks.add(TaskItemEntity(
             dayNumber = dayNumber, dateString = dateStr, timeOfDay = "NIGHT",
-            title = "[08:00 PM] Facial Aesthetics & Neck Sculpting", product = "Chin Tucks (3x15) + Neck Curls + Face Yoga (10 min) + Mewing throughout day",
-            purpose = "Corrects head positioning, sculpts submandibular definitions, and drains facial excess water retention.", category = "BODY", glowPoints = 15
+            title = "[08:00 PM] Facial Aesthetics & Neck Sculpting", product = "Chin tucks 3x15, Neck curls 3 sets, Neck extensions/raises + Face yoga 10 mins + Mewing all day",
+            purpose = "Reduces facial water weight, trains cheek lines, sharpens submandibular angle, and builds posture.", category = "BODY", glowPoints = 15
         ))
 
         // 21. [08:30 PM] SLEEP
         tasks.add(TaskItemEntity(
             dayNumber = dayNumber, dateString = dateStr, timeOfDay = "NIGHT",
-            title = "[08:30 PM] High-Yield Recovery Sleep", product = "Pitch-black, cool room (18-20°C), 7.5 to 8.5 hours total sleep duration",
-            purpose = "Non-negotiable recovery block for hair mitosis, muscle rebuild, and growth hormone pulses.", category = "BODY", glowPoints = 15
+            title = "[08:30 PM] Sleep State Activation", product = "Cool, dark, quiet room (target 7.5 hrs minimum)",
+            purpose = "Non negotiable wake 4 AM link sleep 8:30 PM. Essential for mitotic tissue repair & cell synthesis.", category = "BODY", glowPoints = 15
         ))
 
         // --- 6. SPECIAL ROTATING 30-DAY TRANSFORMATION CHALLENGE TASK ---

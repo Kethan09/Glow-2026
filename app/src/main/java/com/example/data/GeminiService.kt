@@ -166,7 +166,7 @@ object GeminiService {
                     
                     Your premium skincare protocol:
                     - **AM**: Cleanser → Niacinamide 10% (pore size, sebum regulation) → Neutrogena Hydro Boost → **ISDIN Sunscreen SPF 50**.
-                    - **PM**: Cleanser → Active serum (Alpha Arbutin 2% on Mon/Thu; AHA/BHA Toner on Wed/Sat; Just Barrier Recovery on Tue/Fri/Sun) → Hydro Boost → Aloe Vera Gel.
+                    - **PM**: Cleanser → Active serum (AHA/BHA Toner on Mon/Wed/Fri; Alpha Arbutin on Tue/Thu/Sat) → **Retinol 0.2%** (Sun/Mon/Thu) → Hydro Boost → Aloe Vera Gel.
                     
                     ⚠️ **CRITICAL SECRETS**: "Without Sunscreen SPF 50, all tan removal and active brightening acids will fail. Sun exposure destroys newly-revealed skin layers. Protect your barrier."
                 """.trimIndent()
@@ -204,7 +204,7 @@ object GeminiService {
                     Cellular division in hair matrix and skin cells reaches its peak during REM and Deep sleep stages (10 PM to 2 AM).
                     - **Target**: 7.5 to 8.5 hours.
                     - **Smart Alarm**: Keep sleep regular.
-                    - **Night Stack**: Finasteride 1mg, Vitamin E, MSM, and Magnesium Glycinate right before rest.
+                    - **Night Stack**: Finasteride, Saw Palmetto, Vitamin E, and MSM right before rest.
                     
                     *Operating System*: "Sleep is the ultimate natural steroid for skin recovery and hormonal health."
                 """.trimIndent()
@@ -220,7 +220,7 @@ object GeminiService {
                     - **Hair Regrowth** (Minoxidil 5% on temples, finasteride, Nizoral, dermarolling)
                     - **Diet & Fuel** (High protein, Indian recipes, muscle gain, hydration)
                     - **Workout Splits** (Push-Pull-Legs, jawline circulation)
-                    - **Sleep & Habits** (MSM, Magnesium Glycinate, Alarms, daily tracking)
+                    - **Sleep & Habits** (MSM, Saw palmetto, Alarms, daily tracking)
                     
                     *Coach Pro-tip*: "Your self-improvement is non-negotiable. Build raw discipline."
                 """.trimIndent()
